@@ -60,3 +60,4 @@ UNSPLASH_API_KEY=***
 7. Improve accessibilities
 8. Add storybook for better design system
 9. Add empty states
+10. Persist `home`'s state and scroll position on page change

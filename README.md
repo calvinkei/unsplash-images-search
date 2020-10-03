@@ -49,7 +49,7 @@ UNSPLASH_API_KEY=***
 - Project is deployed on Vercel [https://unsplash-images-search.vercel.app/](https://unsplash-images-search.vercel.app/)
 - Commit to `master` branch to deploy
 
-## TODO List if I have more time
+## TODO list if I have more time
 
 1. Unit Tests - Jest and React Testing Libraries
 2. E2E Tests - Cypress

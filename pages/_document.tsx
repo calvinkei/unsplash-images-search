@@ -12,6 +12,11 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <title>Unsplash Image Search App</title>
+          <meta
+            name="description"
+            content="Simple application for searching and saving Unsplash images"
+          />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"

@@ -52,7 +52,8 @@ const UpdateListModal: React.FC<UpdateListModalProps> = ({ open, onClose, onConf
           Cancel
         </Button>
         <Button
-          color="secondary"
+          color="primary"
+          autoFocus
           onClick={() => {
             onConfirm({ title, description })
             setTitle('')

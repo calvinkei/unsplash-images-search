@@ -6,6 +6,7 @@
 2. Frontend Framework - NextJS: A popular SSR React framework with build in route handling
 3. UI Kit - Material UI: A comprehensive and highly customizable UI Kit following Google's Material Design guideline
 4. Global State Management - React Context API: Managing React app's state without relying on other dependencies like redux, mobx, etc. Suitable for handling small projects.
+5. Data Persistance - Local Storage
 
 ## Architecture Design
 
@@ -33,6 +34,21 @@ interface FavListsState {
 - `hooks` stores reusable React hooks
 - `pages` stores all NextJS pages
 
+3. Development
+
+- Create `.env.local` on project root and add the following env variables
+
+```
+UNSPLASH_API_KEY=***
+```
+
+- Run `yarn dev`
+
+4. Deployment
+
+- Project is deployed on Vercel [https://unsplash-images-search.vercel.app/](https://unsplash-images-search.vercel.app/)
+- Commit to `master` branch to deploy
+
 ## TODO List if I have more time
 
 1. Unit Tests - Jest and React Testing Libraries
@@ -43,3 +59,4 @@ interface FavListsState {
 6. Test on more browsers (legacy browsers included)
 7. Improve accessibilities
 8. Add storybook for better design system
+9. Add empty states

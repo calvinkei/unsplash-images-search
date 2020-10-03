@@ -1,0 +1,30 @@
+{
+  "name": "unsplash-images-search",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "lodash": "^4.17.20",
+    "next": "latest",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-infinite-scroll-component": "^5.1.0",
+    "react-lazyload": "^3.0.0",
+    "unsplash-js": "^6.3.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.161",
+    "@types/node": "^12.12.21",
+    "@types/react": "^16.9.16",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-lazyload": "^3.0.0",
+    "@types/unsplash-js": "^6.3.0",
+    "typescript": "4.0"
+  },
+  "license": "MIT"
+}

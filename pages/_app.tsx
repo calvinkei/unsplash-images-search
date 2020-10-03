@@ -8,6 +8,11 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
+        <title>Unsplash Image Search App</title>
+        <meta
+          name="description"
+          content="Simple application for searching and saving Unsplash images"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </Head>
       <CssBaseline />

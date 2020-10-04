@@ -13,7 +13,7 @@
 1. Global State
 
 ```javascript
-interface FavListsState {
+interface GlobalState {
   favLists: FavList[]
   favImages: { [id: string]: { image: UnsplashImage; listId: string } }
   addFavList(list: Omit<FavList, 'id'>): void

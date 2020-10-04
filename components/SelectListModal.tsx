@@ -9,7 +9,7 @@ import {
   ListItemText,
 } from '@material-ui/core'
 import React from 'react'
-import { FavList } from '../contexts/FavListsContext'
+import { FavList } from '../types'
 
 interface SelectListModalProps {
   open: boolean

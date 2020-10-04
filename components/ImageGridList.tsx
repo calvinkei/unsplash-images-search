@@ -1,7 +1,7 @@
 import React from 'react'
 import { GridList, GridListTile, makeStyles } from '@material-ui/core'
 import ImageTile from '../components/ImageTile'
-import { UnsplashImage } from '../contexts/FavListsContext'
+import { UnsplashImage } from '../types'
 
 export const GRID_COLS = 3
 export const GRID_CELL_HEIGHT = 240

@@ -1,14 +1,7 @@
 import React from 'react'
+import { FavList, UnsplashImage } from '../types'
 
-export type UnsplashImage = any // TODO: create type-safe unsplash image
-
-export interface FavList {
-  id: string
-  title: string
-  description: string
-}
-
-interface FavListsState {
+interface GlobalState {
   favLists: FavList[]
   favImages: { [id: string]: { image: UnsplashImage; listId: string } }
   addFavList(list: Omit<FavList, 'id'>): void
@@ -18,7 +11,7 @@ interface FavListsState {
   removeFavImage(id: string): void
 }
 
-const initialValue: FavListsState = {
+const initialValue: GlobalState = {
   favLists: [],
   favImages: {},
   addFavList: () => {},
@@ -36,9 +29,9 @@ try {
   initialValue.favImages = savedFavImages
 } catch (err) {}
 
-const FavListsContext = React.createContext<FavListsState>(initialValue)
+const GlobalStateContext = React.createContext<GlobalState>(initialValue)
 
-const FavListsProvider: React.FC = ({ children }) => {
+const GlobalStateProvider: React.FC = ({ children }) => {
   const [favLists, setFavLists] = React.useState(initialValue.favLists)
   const [favImages, setFavImages] = React.useState(initialValue.favImages)
 
@@ -50,7 +43,7 @@ const FavListsProvider: React.FC = ({ children }) => {
     localStorage.setItem('fav-images', JSON.stringify(favImages))
   }, [favImages])
   return (
-    <FavListsContext.Provider
+    <GlobalStateContext.Provider
       value={{
         favLists,
         favImages,
@@ -65,10 +58,10 @@ const FavListsProvider: React.FC = ({ children }) => {
       }}
     >
       {children}
-    </FavListsContext.Provider>
+    </GlobalStateContext.Provider>
   )
 }
 
-const useFavListsContext = () => React.useContext(FavListsContext)
+const useGlobalStateContext = () => React.useContext(GlobalStateContext)
 
-export { FavListsProvider, useFavListsContext }
+export { GlobalStateProvider, useGlobalStateContext }

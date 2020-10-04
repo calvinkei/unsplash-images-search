@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core'
 import LazyLoad from 'react-lazyload'
 import { GRID_CELL_HEIGHT } from './ImageGridList'
-import { UnsplashImage } from '../contexts/FavListsContext'
+import { UnsplashImage } from '../types'
 
 const useStyles = makeStyles((theme) => ({
   icon: {

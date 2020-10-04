@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 import get from 'lodash/get'
-import { FavList } from '../contexts/FavListsContext'
+import { FavList } from '../types'
 
 interface UpdateListModalProps {
   open: boolean

@@ -2,11 +2,12 @@ import React from 'react'
 import { Box, CircularProgress, Container, makeStyles } from '@material-ui/core'
 import SearchTextField from '../components/SearchTextField'
 import ImageGridList from '../components/ImageGridList'
-import { UnsplashImage, useFavListsContext } from '../contexts/FavListsContext'
+import { useGlobalStateContext } from '../contexts/GlobalStateContext'
 import SelectListModal from '../components/SelectListModal'
 import NavBar from '../components/NavBar'
 import UpdateListModal from '../components/UpdateListModal'
 import useInfiniteScroll from '../hooks/useInfiniteScroll'
+import { UnsplashImage } from '../types'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,7 +24,7 @@ const ImageSearchPage: React.FC = () => {
   const [loading, setLoading] = React.useState(false)
   const [selectedImage, setSelectedImage] = React.useState(null)
   const [isAddListModalOpen, setIsAddListModalOpen] = React.useState(false)
-  const { favImages, favLists, addFavList, addFavImage, removeFavImage } = useFavListsContext()
+  const { favImages, favLists, addFavList, addFavImage, removeFavImage } = useGlobalStateContext()
 
   const imagesWithFavStatus = React.useMemo(
     () => images.map((image) => ({ image, isFav: !!favImages[image.id] })),
@@ -34,6 +35,7 @@ const ImageSearchPage: React.FC = () => {
     try {
       setKeyword(text)
       setLoading(true)
+      setImages([])
       const result = await fetch(`/api/images?keyword=${text}&page=${1}`).then((res) => res.json())
       setPage(1)
       setImages(result.results)

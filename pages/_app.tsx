@@ -2,7 +2,7 @@ import React from 'react'
 import { AppProps } from 'next/dist/next-server/lib/router/router'
 import { CssBaseline } from '@material-ui/core'
 import Head from 'next/head'
-import { FavListsProvider } from '../contexts/FavListsContext'
+import { GlobalStateProvider } from '../contexts/GlobalStateContext'
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
@@ -16,9 +16,9 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </Head>
       <CssBaseline />
-      <FavListsProvider>
+      <GlobalStateProvider>
         <Component {...pageProps} />
-      </FavListsProvider>
+      </GlobalStateProvider>
     </>
   )
 }

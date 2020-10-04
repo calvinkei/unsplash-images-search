@@ -2,10 +2,11 @@ import React from 'react'
 import { Box, Container, Icon, IconButton, makeStyles, Typography } from '@material-ui/core'
 import groupBy from 'lodash/groupBy'
 import ImageGridList from '../components/ImageGridList'
-import { FavList, useFavListsContext } from '../contexts/FavListsContext'
+import { useGlobalStateContext } from '../contexts/GlobalStateContext'
 import NavBar from '../components/NavBar'
 import UpdateListModal from '../components/UpdateListModal'
 import ConfirmDialog from '../components/ConfirmDialog'
+import { FavList } from '../types'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,11 +25,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const ImageSearchPage: React.FC = () => {
+const FavoritesPage: React.FC = () => {
   const classes = useStyles()
   const [updatingList, setUpdatingList] = React.useState<FavList | undefined>(undefined)
   const [deletingList, setDeletingList] = React.useState<FavList | undefined>(undefined)
-  const { favImages, favLists, removeFavImage, updateFavList, removeFavList } = useFavListsContext()
+  const {
+    favImages,
+    favLists,
+    removeFavImage,
+    updateFavList,
+    removeFavList,
+  } = useGlobalStateContext()
   const imagesByList = React.useMemo(
     () => groupBy(Object.values(favImages), (image) => image.listId),
     [favImages]
@@ -78,4 +85,4 @@ const ImageSearchPage: React.FC = () => {
   )
 }
 
-export default ImageSearchPage
+export default FavoritesPage

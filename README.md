@@ -33,6 +33,7 @@ interface GlobalState {
 - `contexts` stores the contexts for managing global states
 - `hooks` stores reusable React hooks
 - `pages` stores all NextJS pages
+- `types` stores all common reusable typings
 
 3. Development
 
